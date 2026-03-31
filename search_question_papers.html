@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search Question Papers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body { background:#f4f4f4; }
+
+        .box {
+            width: 50%;
+            margin: 80px auto;
+            padding: 30px;
+            background: rgb(248, 249, 248);
+            border-radius: 15px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 17px;
+        }
+
+        button {
+            padding: 14px;
+            width: 100%;
+            background: seagreen;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+<div class="box">
+    <h2>Search Question Papers</h2>
+
+    <form method="POST">
+        <select name="subjectcode">
+            <option disabled selected>Select Subjectcode</option>
+            <option>BMATS101</option>
+            <option>BMATS201</option>
+            <option>BMATS301</option>
+            <option>BCS405A</option>
+            <option>BCS306A</option>
+            <option>BCS304</option>
+        </select>
+        <select name="years">
+             <option disabled selected>Select years</option> 
+             {% for y in range(2010, 2026) %} 
+             <option>{{ y }}</option> {% endfor %} 
+         </select>
+
+        <button type="submit">Search</button>
+    </form>
+    {% if results %}
+    <h3>Results:</h3>
+    <ul>
+        {% for r in results %}
+            <li>{{ r.subjectcode }} - {{ r.years }}
+                <a href="/static/question_papers/{{ r.filename }}" download>Download</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+</div>
+
+</body>
+</html>

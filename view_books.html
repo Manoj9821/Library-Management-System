@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>View Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { background: #f4f4f4; font-family: Arial; }
+
+        .container {
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .book-box {
+            background: rgb(240, 242, 243);
+            width: 280px;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+<h1>All Books</h1>
+
+<div class="container">
+    <div class="grid">
+        {% for book in books %}
+        <div class="book-box">
+            <h3>{{ book.title }}</h3>
+            <p><b>Author:</b> {{ book.author }}</p>
+            <p><b>Year:</b> {{ book.year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

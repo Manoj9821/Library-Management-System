@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard - Library</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        .dashboard-container {
+            width: 80%;
+            margin: 50px auto;
+            background: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #0004;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #222;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            padding: 12px 20px;
+            background: #1e88e5;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #1565c0;
+        }
+
+        .logout-btn {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .logout-btn a {
+            padding: 10px 18px;
+            background: #d32f2f;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .logout-btn a:hover {
+            background: #b71c1c;
+        }
+    </style>
+</head>
+
+<body class="dashboard-bg">
+    <div class="overlay">
+        <div class="dashboard-container">
+
+            <h1>Welcome to Library Dashboard</h1>
+
+            {% if role == 'admin' %}
+                <div class="menu">
+                    <a href="/admin_dashboard">Admin Panel</a>
+                    <a href="/add_book">Add Books</a>
+                    <a href="/upload_qp">Upload Question Papers</a>
+                    <a href="/search">Search Books</a>
+                    <a href="/users">View Users</a>
+                </div>
+
+            {% else %}
+                <div class="menu">
+                     <a href="/search" class="btn">Search Books</a>
+                     <a href="/filter" class="btn">Filter Results</a>
+                     <a href="/profile" class="btn">My Profile</a>
+                     <a href="/upload-qp" class="btn">Upload QP</a>
+
+                </div>
+            {% endif %}
+
+            <div class="logout-btn">
+                <a href="/logout">Logout</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

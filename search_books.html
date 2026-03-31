@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body { background: #f4f4f4; }
+
+        .search-box {
+            width: 50%;
+            margin: 80px auto;
+            background: rgb(246, 248, 247);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            font-size: 17px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background: royalblue;
+            color: white;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+<div class="search-box">
+    <h2>Search Books</h2>
+
+    <form method="POST">
+        <input type="text" name="query" placeholder="Enter book name, author, etc" required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+</body>
+</html>

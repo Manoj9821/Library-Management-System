@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Apply dashboard background -->
+<body class="dashboard-bg">
+    
+<h2>Welcome Janardhan</h2>
+
+<style>
+    body {
+            background-image: url("/static/images/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 97vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    .navbar {
+        background-color: #5a84b0;
+        padding: 15px;
+        color: rgb(250, 246, 246);
+        text-align: start;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .box {
+        width: 250px;
+        height: 150px;
+        background: rgb(255, 255, 255);
+        margin: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        text-align: center;
+        padding-top: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        transition: 0.3s;
+        color: #161414;
+        backdrop-filter: blur(3px);
+    }
+
+    .box:hover {
+        transform: scale(1.06);
+        box-shadow: 0 0 15px rgba(128, 123, 123, 0.4);
+    }
+
+    a {
+        text-decoration: thickness;
+        color: rgb(248, 245, 245);
+    }
+
+    h4 {
+        color: rgb(247, 244, 244);
+    }
+</style>
+
+<div class="container">
+
+    <a href="/search_books">
+        <div class="box">Search Books</div>
+    </a>
+
+    <a href="/view_books">
+        <div class="box">View All Books</div>
+    </a>
+
+    <a href="/search_question_papers">
+        <div class="box">Search Question Papers</div>
+    </a>
+
+</div>
+
+</body>
+
+{% endblock %}

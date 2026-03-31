@@ -1,0 +1,58 @@
+<style>
+    body {
+            background-image: url("/static/images/library_bg.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+
+    .welcome-wrapper {
+        height: 88vh;        /* because navbar takes some space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome-box {
+        padding: 40px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 15px;
+        backdrop-filter: blur(8px);
+        text-align: center;
+        width: 350px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .welcome-box h1 {
+        color: rgb(25, 23, 23);
+        margin-bottom: 30px;
+    }
+
+    .welcome-btn {
+        padding: 12px 30px;
+        background: #007bff;
+        border: none;
+        border-radius: 8px;
+        color: rgb(254, 249, 249);
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .welcome-btn:hover {
+        background: #0059d1;
+    }
+</style>
+
+<div class="welcome-wrapper">
+    <div class="welcome-box">
+        <h1>WELCOME</h1>
+        <a href="/login">
+            <button class="welcome-btn">Login</button>
+        </a>
+    </div>
+</div>
+

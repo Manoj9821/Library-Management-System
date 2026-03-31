@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Returned Books</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            background: #f2f6f3;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th, table td {
+            border: 1px solid gray;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background: #34495e;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+    <div class="navbar">Returned Books</div>
+
+    <div class="container">
+        <h3>List of Returned Books</h3>
+
+        <table>
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Returned By</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+            </tr>
+
+            <!-- Dummy row (replace with backend loop later) -->
+            <tr>
+                <td>102</td>
+                <td>Data Structures</td>
+                <td>user@mail.com</td>
+                <td>2025-01-05</td>
+                <td>2025-01-15</td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

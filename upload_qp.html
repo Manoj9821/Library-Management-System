@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Upload Question Paper</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body { background:#f4f4f4; }
+
+        .box {
+            width: 20%;
+            margin: 80px auto;
+            padding: 30px;
+            background: rgb(248, 249, 248);
+            border-radius: 15px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 17px;
+        }
+
+        button {
+            padding: 14px;
+            width: 10%;
+            background: seagreen;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="bg">
+<div class="overlay container">
+
+    <h2>Upload Question Paper</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Subjectcode</label>
+        <select name="subjectcode" required>
+            <option value="">Select Subjectcode</option>
+            <option>BCS304</option>
+            <option>BCS306A</option>
+            <option>BCS405A</option>
+            <option>BMATS101</option>
+            <option>BMATS201</option>
+            <option>BCS301</option>
+        </select>
+
+        <label>years</label>
+        <select name="years" required>
+            {% for y in range(2015, 2026) %}
+            <option>{{ y }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Upload File</label>
+        <input type="file" name="qpfile" accept=".pdf,.doc,.docx" required>
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+    <br>
+    <a href="/admin_dashboard" class="btn">Back</a>
+
+</div>
+</body>
+</html>

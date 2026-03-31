@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Books</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f0f0;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar {
+            background: #f1f2f4;
+            color: rgb(40, 164, 201);
+            padding: 15px;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .form-box {
+            background: rgb(248, 251, 251);
+            width: 40%;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 12px 0;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        button {
+            background: #2980b9;
+            color: rgb(239, 244, 241);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+<div class="navbar">Add Books</div>
+
+<div class="form-box">
+    <form>
+        <label>Book Title</label><br>
+        <input type="text" placeholder="Enter book title"><br>
+
+        <label>Author</label><br>
+        <input type="text" placeholder="Enter author name"><br>
+
+        <label>Category</label><br>
+        <input type="text" placeholder="Enter category"><br>
+
+        <label>Quantity</label><br>
+        <input type="number" min="1"><br>
+
+        <button type="submit">Add Book</button>
+    </form>
+</div>
+
+</body>
+</html>

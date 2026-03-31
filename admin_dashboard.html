@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Manoj</title>
+
+    <style>
+        body {
+            background-image: url("/static/images/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 97vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar {
+            background-color: #71f06f;
+            padding: 15px;
+            color: rgb(243, 246, 247);
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .box {
+            width: 250px;
+            height: 100px;
+            background: rgb(250, 250, 251);
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px gray;
+            text-align: center;
+            padding-top: 50px;
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 15px #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="dashboard-bg">
+
+    <div class="navbar">
+        Admin Dashboard
+    </div>
+
+    <div class="container">
+
+        <a href="/add_books">
+            <div class="box">Add Books</div>
+        </a>
+
+        <a href="/view_books">
+            <div class="box">View Books</div>
+        </a>
+
+        <a href="/upload_qp">
+            <div class="box">Upload Question Papers</div>
+        </a>
+
+        <a href="/issued_books">
+            <div class="box">Issued Books</div>
+        </a>
+
+        <a href="/returned_books">
+            <div class="box">Returned Books</div>
+        </a>
+
+        <a href="/logout">
+            <div class="box">Logout</div>
+        </a>
+
+    </div>
+
+</body>
+</html>

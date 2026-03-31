@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { background:#f4f4f4; }
+
+        .card {
+            width: 40%;
+            margin: 80px auto;
+            background:white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow:0 5px 12px rgba(0,0,0,0.3);
+            text-align:center;
+        }
+
+        h2 { margin-bottom: 20px; }
+        p { font-size: 18px; }
+    </style>
+</head>
+
+<body class="bg">
+
+<div class="card">
+    <h2>User Profile</h2>
+
+    <p><b>Name:</b> {{ user.name }}</p>
+    <p><b>Email:</b> {{ user.email }}</p>
+    <p><b>Role:</b> {{ user.role }}</p>
+</div>
+
+</body>
+</html>

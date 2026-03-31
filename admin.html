@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Library</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-bg">
+  <div class="overlay container">
+    <h1>Admin Panel</h1>
+    <p>
+      <a class="btn" href="/add_book">Add Book</a>
+      <a class="btn" href="/upload_qp">Upload QP</a>
+      <a class="btn" href="/admin_dashboard">Analytics</a>
+      <a class="btn" href="/logout">Logout</a>
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Books</h3>
+        <table class="table">
+          <tr><th>ID</th><th>Title</th><th>Author</th><th>Cat</th><th>Img</th><th>Avail</th></tr>
+          {% for b in books %}
+          <tr>
+            <td>{{ b.id }}</td>
+            <td>{{ b.title }}</td>
+            <td>{{ b.author }}</td>
+            <td>{{ b.category }}</td>
+            <td>
+              {% if b.image %}
+                <img src="/static/book_images/{{ b.image }}" class="book-img">
+              {% else %}
+                <span class="muted">No image</span>
+              {% endif %}
+            </td>
+            <td>{{ 'Yes' if b.available else 'No' }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Question Papers</h3>
+        <ul>
+          {% for q in qps %}
+            <li>{{ q.filename }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

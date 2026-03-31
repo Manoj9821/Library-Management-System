@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="mb-3">View Question Papers</h3>
+
+{% if papers %}
+<div class="row">
+
+    {% for p in papers %}
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm p-3">
+
+            <h5>{{ p.subject }}</h5>
+
+            <p class="mb-1">
+                <strong>Year:</strong> {{ p.year }}
+            </p>
+
+            <a href="{{ url_for('static', filename='papers/' + p.filename) }}"
+               class="btn btn-primary w-100 mt-2">
+               Download
+            </a>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% else %}
+<div class="alert alert-info">
+    No question papers found.
+</div>
+{% endif %}
+
+{% endblock %}
